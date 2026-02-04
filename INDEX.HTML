@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍗 Chicken Stall POS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1><i class="fas fa-utensils"></i> MEERATH KABAB & ROLL</h1>
+            <div class="header-info">
+                <span id="current-date"></span>
+                <span id="current-time"></span>
+                <span>Bill No: <strong id="bill-number">1</strong></span>
+            </div>
+        </header>
+
+        <!-- MENU SECTION -->
+        <div class="menu-section">
+            <h2><i class="fas fa-list"></i> MENU</h2>
+            <div class="menu-grid" id="menu-items">
+                <!-- Items will load from JavaScript -->
+            </div>
+        </div>
+
+        <!-- ORDER SECTION -->
+        <div class="order-section">
+            <h2><i class="fas fa-shopping-cart"></i> CURRENT ORDER</h2>
+            <div class="order-details">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-table">
+                        <!-- Order items will appear here -->
+                    </tbody>
+                </table>
+                
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">RS:0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>GST (5%):</span>
+                        <span id="gst">RS:0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span><strong>GRAND TOTAL:</strong></span>
+                        <span id="grand-total">RS:0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="action-buttons">
+                <button class="btn btn-print" onclick="printBill()">
+                    <i class="fas fa-print"></i> PRINT BILL
+                </button>
+                <button class="btn btn-new" onclick="newOrder()">
+                    <i class="fas fa-receipt"></i> NEW ORDER
+                </button>
+                <button class="btn btn-pay" onclick="processPayment()">
+                    <i class="fas fa-rupee-sign"></i> CASH PAYMENT
+                </button>
+                <button class="btn btn-upi" onclick="Easypaisa()">
+                    <i class="fas fa-qrcode"></i> EASY PAISA
+                
+            </div>
+
+            <!-- QUICK STATS -->
+            <div class="quick-stats">
+                <div class="stat-box">
+                    <span>Today's Sale</span>
+                    <strong id="daily-sale">Rs:0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Orders Today</span>
+                    <strong id="order-count">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Items Sold</span>
+                    <strong id="item-count">0</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
